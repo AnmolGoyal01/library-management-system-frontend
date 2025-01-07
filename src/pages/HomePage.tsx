@@ -35,7 +35,7 @@ const HomePage: React.FC = () => {
         Available Books
       </h1>
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
-        {books.map((book) => (
+        {books?.map((book) => (
           <div
             key={book._id}
             className="bg-white dark:bg-gray-800 shadow-lg rounded-lg p-4"
@@ -57,7 +57,7 @@ const HomePage: React.FC = () => {
       </div>
       {/* Pagination Controls */}
       <div className="flex justify-center mt-6">
-        {[...Array(totalPages)].map((_, index) => (
+        {[...Array(totalPages)]?.map((_, index) => (
           <button
             key={index}
             onClick={() => handlePageChange(index + 1)}
