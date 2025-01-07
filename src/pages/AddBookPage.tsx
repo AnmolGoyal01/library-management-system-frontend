@@ -14,8 +14,8 @@ const AddBookPage: React.FC = () => {
 
   const [title, setTitle] = useState<string>("");
   const [author, setAuthor] = useState<string>("");
-  const [publicationYear, setPublicationYear] = useState<number | null>();
-  const [availableCount, setAvailableCount] = useState<number | null>();
+  const [publicationYear, setPublicationYear] = useState<string>("");
+  const [availableCount, setAvailableCount] = useState<string>("");
   const [error, setError] = useState("");
 
   if (!user) {
