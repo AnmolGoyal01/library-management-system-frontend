@@ -95,16 +95,16 @@ const BorrowReturnPage: React.FC = () => {
             className="bg-white dark:bg-gray-800 shadow-lg rounded-lg p-4"
           >
             <h2 className="text-lg font-semibold text-gray-800 dark:text-gray-200">
-              {book.title}
+              {book?.title}
             </h2>
             <p className="text-gray-600 dark:text-gray-400">
-              Author: {book.author}
+              Author: {book?.author}
             </p>
             <p className="text-gray-600 dark:text-gray-400">
-              Year: {book.publicationYear}
+              Year: {book?.publicationYear}
             </p>
             <p className="text-gray-600 dark:text-gray-400">
-              Available: {book.availableCount}
+              Available: {book?.availableCount}
             </p>
             <button
               onClick={() => borrowBook(book._id)}
@@ -142,13 +142,13 @@ const BorrowReturnPage: React.FC = () => {
             className="bg-white dark:bg-gray-800 shadow-lg rounded-lg p-4"
           >
             <h2 className="text-lg font-semibold text-gray-800 dark:text-gray-200">
-              {borrowedBook.book.title}
+              {borrowedBook.book?.title}
             </h2>
             <p className="text-gray-600 dark:text-gray-400">
-              Author: {borrowedBook.book.author}
+              Author: {borrowedBook.book?.author}
             </p>
             <p className="text-gray-600 dark:text-gray-400">
-              Year: {borrowedBook.book.publicationYear}
+              Year: {borrowedBook.book?.publicationYear}
             </p>
             <p className="text-gray-600 dark:text-gray-400">
               Borrowed On:{" "}
@@ -170,7 +170,7 @@ const BorrowReturnPage: React.FC = () => {
             )}
             {!borrowedBook?.returnDate && (
               <button
-                onClick={() => returnBook(borrowedBook.book._id)}
+                onClick={() => returnBook(borrowedBook.book?._id)}
                 className="mt-2 bg-red-500 text-white px-3 py-1 rounded-md"
               >
                 Return Book
