@@ -2,11 +2,12 @@ import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { RootState } from "../redux/store";
 import BooksManager from "../redux/books/bookActions";
+import { useNavigate } from "react-router-dom";
 
-// todo - check pagination
 
 const HomePage: React.FC = () => {
   const dispatch = useDispatch();
+  const navigate = useNavigate();
   const booksManager = new BooksManager(dispatch);
   const { books, loading, totalPages } = useSelector(
     (state: RootState) => state.books
@@ -38,7 +39,8 @@ const HomePage: React.FC = () => {
         {books?.map((book) => (
           <div
             key={book._id}
-            className="bg-white dark:bg-gray-800 shadow-lg rounded-lg p-4"
+            onClick={() => navigate(`/book/${book?._id}`)}
+            className="bg-white dark:bg-gray-800 shadow-lg rounded-lg p-4 cursor-pointer"
           >
             <h2 className="text-lg font-semibold text-gray-800 dark:text-gray-200">
               {book.title}

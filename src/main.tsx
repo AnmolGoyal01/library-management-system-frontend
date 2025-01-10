@@ -12,6 +12,7 @@ import {
   SignupPage,
   BorrowReturnPage,
   DashboardPage,
+  BookDetailsPage,
 } from "./pages";
 import ProtectedRoute from "./components/ProtectedRoute.tsx";
 
@@ -23,6 +24,14 @@ const router = createBrowserRouter([
       {
         path: "",
         element: <HomePage />,
+      },
+      {
+        path: "book/:bookId",
+        element: (
+          <ProtectedRoute authentication={true}>
+            <BookDetailsPage />
+          </ProtectedRoute>
+        ),
       },
       {
         path: "login",

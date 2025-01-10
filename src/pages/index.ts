@@ -4,6 +4,7 @@ import LoginPage from "./LoginPage";
 import SignupPage from "./SignupPage";
 import BorrowReturnPage from "./BorrowReturnPage";
 import DashboardPage from "./DashboardPage";
+import BookDetailsPage from "./BookDetailsPage";
 
 export {
   HomePage,
@@ -12,4 +13,5 @@ export {
   SignupPage,
   BorrowReturnPage,
   DashboardPage,
+  BookDetailsPage,
 };
