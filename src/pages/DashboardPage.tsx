@@ -38,7 +38,7 @@ const DashboardPage: React.FC = () => {
 
   if (loading) {
     return (
-      <div className="min-h-screen flex items-center justify-center">
+      <div className="min-h-screen flex items-center justify-center dark:text-white dark:bg-gray-900">
         <div>Loading...</div>
       </div>
     );
